@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Terminal - Creative Technologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "JetBrains Mono", monospace;
+        background: #0d1117;
+        color: #c9d1d9;
+      }
+
+      .terminal-window {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      }
+
+      .terminal-header {
+        background: #21262d;
+        border-bottom: 1px solid #30363d;
+        padding: 12px 16px;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .terminal-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .dot-red {
+        background: #ff5f56;
+      }
+      .dot-yellow {
+        background: #ffbd2e;
+      }
+      .dot-green {
+        background: #27ca3f;
+      }
+
+      .typing-animation {
+        border-right: 2px solid #58a6ff;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          border-color: #58a6ff;
+        }
+        51%,
+        100% {
+          border-color: transparent;
+        }
+      }
+
+      .command-line {
+        color: #58a6ff;
+      }
+
+      .output-text {
+        color: #c9d1d9;
+        line-height: 1.6;
+      }
+
+      .highlight-green {
+        color: #7ee787;
+      }
+      .highlight-blue {
+        color: #58a6ff;
+      }
+      .highlight-purple {
+        color: #d2a8ff;
+      }
+      .highlight-orange {
+        color: #ffa657;
+      }
+      .highlight-red {
+        color: #ff7b72;
+      }
+
+      .section-header {
+        color: #f0883e;
+        font-weight: 600;
+        border-bottom: 1px solid #30363d;
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .skill-bar {
+        background: #21262d;
+        height: 4px;
+        border-radius: 2px;
+        overflow: hidden;
+        margin-top: 4px;
+      }
+
+      .skill-progress {
+        background: linear-gradient(90deg, #58a6ff, #7ee787);
+        height: 100%;
+        border-radius: 2px;
+        animation: loadSkill 2s ease-in-out;
+      }
+
+      @keyframes loadSkill {
+        from {
+          width: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Main Terminal Window -->
+      <div class="terminal-window fade-in hover-glow">
+        <div class="terminal-header">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+          <span class="text-sm text-gray-400 ml-4">terminal@cv:~$</span>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <!-- Header Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ whoami</div>
+            <div class="output-text mb-4">
+              <div class="text-2xl md:text-3xl font-bold highlight-green mb-2">
+                Creative Technologist | Worldbuilder | Narrative Experience
+                Designer
+              </div>
+              <div class="text-sm md:text-base">
+                <span class="highlight-blue">📍</span> Online ·
+                <span class="highlight-blue">✉️</span>
+                <a
+                  href="mailto:indigolilobarcena@delulufuture.dev"
+                  class="highlight-orange hover:underline"
+                  >indigolilobarcena@delulufuture.dev</a
+                >
+                · <span class="highlight-blue">📞</span>
+                <span class="highlight-purple">+52 5610677516</span>
+              </div>
+              <div class="mt-2">
+                <span class="highlight-blue">🔗</span>
+                <a
+                  href="https://github.com/zukunftwellefanzine"
+                  class="highlight-orange hover:underline"
+                  target="_blank"
+                  >github.com/zukunftwellefanzine</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ display profile_picture.jpg</div>
+            <div class="output-text">
+              <div class="section-header">📸 FOTO DE PERFIL</div>
+              <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="relative">
+                  <div
+                    class="w-48 h-48 bg-gray-900 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center overflow-hidden hover:border-blue-500 transition-colors"
+                  >
+                    <div
+                      id="photoContainer"
+                      class="w-full h-full flex items-center justify-center"
+                    >
+                      <div class="text-center">
+                        <div class="text-4xl mb-2">👨‍💻</div>
+                        <div class="text-sm text-gray-400">Profile Picture</div>
+                        <div class="text-xs text-gray-500 mt-1">
+                          Click to upload
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      id="profileImage"
+                      class="w-full h-full object-cover hidden"
+                      alt="Profile Picture"
+                    />
+                  </div>
+                  <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                </div>
+                <div class="flex-1">
+                  <div
+                    class="p-4 bg-gray-900 rounded border-l-4 border-green-500"
+                  >
+                    <div class="text-sm space-y-2">
+                      <div class="highlight-green">📁 Formatos soportados:</div>
+                      <div class="text-xs text-gray-400">
+                        JPG, PNG, GIF, WebP
+                      </div>
+                      <div class="highlight-blue mt-3">💡 Tip:</div>
+                      <div class="text-xs text-gray-400">
+                        Usa una imagen cuadrada para mejor resultado
+                      </div>
+                      <div class="highlight-purple mt-3">🎯 Recomendación:</div>
+                      <div class="text-xs text-gray-400">
+                        Foto profesional o avatar que represente tu estilo
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Summary -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ cat profile.md</div>
+            <div class="output-text">
+              <div class="section-header">🔹 RESUMEN PROFESIONAL</div>
+              <p>
+                Soy una creative technologist, worldbuilder y brand storyteller
+                <span class="highlight-green"
+                  >enfocada en dirección creativa, narrativa digital,
+                </span>
+                inteligencia artificial y diseño de experiencias.Trabajo desde
+                una perspectiva maker, DIY y experimental, combinando
+                storytelling, diseño web, branding, Figma, IA generativa y vibe
+                coding para transformar ideas en proyectos digitales con
+                identidad propia.
+                <span class="highlight-blue"
+                  >Actualmente desarrollo Delulu y Patsy, proyectos donde
+                  exploro worldbuilding, presencia digital, educación creativa,
+                  branding personal</span
+                >
+                y nuevas formas de crear con tecnología
+              </p>
+              <p class="mt-3">
+                Manejo tecnologías como
+                <span class="highlight-purple"
+                  >Python, Java, SQL, REST APIs, React, Supabase</span
+                >
+                y <span class="highlight-orange">Figma</span>. Mi enfoque es
+                crear soluciones digitales funcionales y con identidad,
+                priorizando
+                <span class="highlight-green"
+                  >accesibilidad, diversidad y buenas prácticas</span
+                >.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ ls -la experience/</div>
+            <div class="output-text">
+              <div class="section-header">🟦 EXPERIENCIA LABORAL</div>
+
+              <div
+                class="mb-6 p-4 bg-gray-900 rounded border-l-4 border-green-500"
+              >
+                <div class="highlight-green font-semibold">
+                  Omicron Transformación Digital
+                </div>
+                <div class="highlight-blue text-sm">
+                  Project Manager / Desarrolladora – 2024 - Actualidad
+                </div>
+                <ul class="mt-2 text-sm space-y-1">
+                  <li>
+                    • Coordinación de equipos multidisciplinarios para el diseño
+                    y entrega de plataformas web
+                  </li>
+                  <li>
+                    • Supervisión técnica de herramientas educativas y de
+                    inclusión digital
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="mb-6 p-4 bg-gray-900 rounded border-l-4 border-blue-500"
+              >
+                <div class="highlight-green font-semibold">
+                  Cave Electromecánica SA de CV
+                </div>
+                <div class="highlight-blue text-sm">
+                  Comunicación Organizacional – 2022 - 2024
+                </div>
+                <ul class="mt-2 text-sm space-y-1">
+                  <li>
+                    • Estrategia de comunicación interna/externa y diseño de
+                    identidad visual
+                  </li>
+                  <li>
+                    • Gestión de contenidos digitales y materiales corporativos
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="mb-6 p-4 bg-gray-900 rounded border-l-4 border-purple-500"
+              >
+                <div class="highlight-green font-semibold">
+                  BA Electromecánicos SA de CV
+                </div>
+                <div class="highlight-blue text-sm">
+                  Comunicación Organizacional – 2015 - 2022
+                </div>
+                <ul class="mt-2 text-sm space-y-1">
+                  <li>
+                    • Implementación de medios internos y cultura organizacional
+                  </li>
+                  <li>• Campañas informativas y editoriales digitales</li>
+                </ul>
+              </div>
+
+              <div
+                class="mb-6 p-4 bg-gray-900 rounded border-l-4 border-orange-500"
+              >
+                <div class="highlight-green font-semibold">
+                  Alcaldía Álvaro Obregón – Desarrollo Social
+                </div>
+                <div class="highlight-blue text-sm">
+                  Atención Ciudadana – 2018 - 2021
+                </div>
+                <ul class="mt-2 text-sm space-y-1">
+                  <li>
+                    • Apoyo directo a población en situación de vulnerabilidad
+                  </li>
+                  <li>
+                    • Gestión de programas sociales y campañas institucionales
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ cat education.json</div>
+            <div class="output-text">
+              <div class="section-header">🟦 EDUCACIÓN FORMAL</div>
+
+              <div class="space-y-4">
+                <div class="p-3 bg-gray-900 rounded">
+                  <div class="highlight-purple font-semibold">
+                    Maestría en Comunicación e Identidad Corporativa
+                  </div>
+                  <div class="text-sm highlight-blue">
+                    Universidad Internacional de La Rioja | 2020 - 2021
+                  </div>
+                </div>
+
+                <div class="p-3 bg-gray-900 rounded">
+                  <div class="highlight-purple font-semibold">
+                    Maestría en Diseño y Creatividad Digital
+                  </div>
+                  <div class="text-sm highlight-blue">
+                    Centro Universitario de la Comunicación | 2016 - 2017
+                  </div>
+                </div>
+
+                <div class="p-3 bg-gray-900 rounded">
+                  <div class="highlight-purple font-semibold">
+                    Ingeniería en Software
+                  </div>
+                  <div class="text-sm highlight-blue">
+                    Universidad de la Ciudad de México | 2016 - 2021
+                  </div>
+                </div>
+
+                <div class="p-3 bg-gray-900 rounded">
+                  <div class="highlight-purple font-semibold">
+                    Licenciatura en Ciencias de la Comunicación
+                  </div>
+                  <div class="text-sm highlight-blue">
+                    Universidad del Valle de México | 2006 - 2009
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ ./skills --list</div>
+            <div class="output-text">
+              <div class="section-header">🟣 HABILIDADES TÉCNICAS</div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <div class="mb-4">
+                    <div class="highlight-green font-semibold mb-2">
+                      Backend & Databases
+                    </div>
+                    <div class="space-y-2">
+                      <div>
+                        <span class="highlight-blue">Python</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-blue">Java</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-blue">SQL / PostgreSQL</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-blue">REST APIs</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="highlight-green font-semibold mb-2">
+                      Frontend & Frameworks
+                    </div>
+                    <div class="space-y-2">
+                      <div>
+                        <span class="highlight-purple">React</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-purple">JavaScript</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-purple">HTML/CSS</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="mb-4">
+                    <div class="highlight-green font-semibold mb-2">
+                      Tools & DevOps
+                    </div>
+                    <div class="space-y-2">
+                      <div>
+                        <span class="highlight-orange">Git / GitHub</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-orange">Docker</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-orange">Supabase</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="highlight-green font-semibold mb-2">
+                      Design & Multimedia
+                    </div>
+                    <div class="space-y-2">
+                      <div>
+                        <span class="highlight-red">Figma</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="highlight-red">Adobe Creative Suite</span>
+                        <div class="skill-bar">
+                          <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ git log --oneline projects/</div>
+            <div class="output-text">
+              <div class="section-header">💼 WORK / PROJECTS EXPERIENCE</div>
+
+              <div class="space-y-4">
+                <div
+                  class="p-4 bg-gray-900 rounded border-l-4 border-blue-500 hover:bg-gray-800 transition-colors"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div class="highlight-green font-semibold">
+                      Library Manager
+                    </div>
+                    <div class="flex space-x-2 text-sm">
+                      <span class="bg-blue-600 px-2 py-1 rounded text-xs"
+                        >Java</span
+                      >
+                      <span class="bg-purple-600 px-2 py-1 rounded text-xs"
+                        >SQL</span
+                      >
+                      <span class="bg-gray-600 px-2 py-1 rounded text-xs"
+                        >Docker</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-sm mb-3">
+                    CRUD completo, Swagger/OpenAPI, JUnit tests, deploy local
+                    con Docker.
+                  </p>
+                  <div class="flex space-x-4 text-xs">
+                    <a
+                      href="#"
+                      onclick="openRepo('library-manager')"
+                      class="highlight-blue hover:underline"
+                      >📂 Repository</a
+                    >
+                    <a
+                      href="#"
+                      onclick="openDemo('library-manager')"
+                      class="highlight-orange hover:underline"
+                      >🚀 Demo</a
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="p-4 bg-gray-900 rounded border-l-4 border-green-500 hover:bg-gray-800 transition-colors"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div class="highlight-green font-semibold">
+                      Convertidor de Divisas
+                    </div>
+                    <div class="flex space-x-2 text-sm">
+                      <span class="bg-green-600 px-2 py-1 rounded text-xs"
+                        >Express</span
+                      >
+                      <span class="bg-blue-600 px-2 py-1 rounded text-xs"
+                        >TypeScript</span
+                      >
+                      <span class="bg-yellow-600 px-2 py-1 rounded text-xs"
+                        >CI/CD</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-sm mb-3">
+                    Microservicio REST con validación Zod, caching en memoria,
+                    Jest tests + CI/CD en GitHub Actions.
+                  </p>
+                  <div class="flex space-x-4 text-xs">
+                    <a
+                      href="#"
+                      onclick="openRepo('currency-converter')"
+                      class="highlight-blue hover:underline"
+                      >📂 Repository</a
+                    >
+                    <a
+                      href="#"
+                      onclick="openDemo('currency-converter')"
+                      class="highlight-orange hover:underline"
+                      >🚀 Demo</a
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="p-4 bg-gray-900 rounded border-l-4 border-yellow-500 hover:bg-gray-800 transition-colors"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div class="highlight-green font-semibold">
+                      Amazon Tracker
+                    </div>
+                    <div class="flex space-x-2 text-sm">
+                      <span class="bg-yellow-600 px-2 py-1 rounded text-xs"
+                        >Python</span
+                      >
+                      <span class="bg-red-600 px-2 py-1 rounded text-xs"
+                        >Scraping</span
+                      >
+                      <span class="bg-green-600 px-2 py-1 rounded text-xs"
+                        >API</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-sm mb-3">
+                    Integración con scraping/API, endpoints de consulta, pytest.
+                  </p>
+                  <div class="flex space-x-4 text-xs">
+                    <a
+                      href="#"
+                      onclick="openRepo('amazon-tracker')"
+                      class="highlight-blue hover:underline"
+                      >📂 Repository</a
+                    >
+                    <a
+                      href="#"
+                      onclick="openDemo('amazon-tracker')"
+                      class="highlight-orange hover:underline"
+                      >🚀 Demo</a
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="p-4 bg-gray-900 rounded border-l-4 border-purple-500 hover:bg-gray-800 transition-colors"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div class="highlight-green font-semibold">
+                      Blockchain Simple
+                    </div>
+                    <div class="flex space-x-2 text-sm">
+                      <span class="bg-yellow-600 px-2 py-1 rounded text-xs"
+                        >Python</span
+                      >
+                      <span class="bg-purple-600 px-2 py-1 rounded text-xs"
+                        >Blockchain</span
+                      >
+                      <span class="bg-red-600 px-2 py-1 rounded text-xs"
+                        >Security</span
+                      >
+                    </div>
+                  </div>
+                  <p class="text-sm mb-3">
+                    Prototipo educativo con arquitectura de cadena, seguridad
+                    básica.
+                  </p>
+                  <div class="flex space-x-4 text-xs">
+                    <a
+                      href="#"
+                      onclick="openRepo('simple-blockchain')"
+                      class="highlight-blue hover:underline"
+                      >📂 Repository</a
+                    >
+                    <a
+                      href="#"
+                      onclick="openDemo('simple-blockchain')"
+                      class="highlight-orange hover:underline"
+                      >🚀 Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extras / Interests Section -->
+          <div class="mb-8">
+            <div class="command-line mb-2">$ cat interests.txt</div>
+            <div class="output-text">
+              <div class="section-header">✨ EXTRAS / INTERESTS</div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                  <div class="p-4 bg-gray-900 rounded">
+                    <div class="highlight-purple font-semibold mb-2">
+                      🦀 Exploración Técnica
+                    </div>
+                    <div class="text-sm space-y-1">
+                      <div>
+                        • <span class="highlight-orange">Rust</span> -
+                        Algoritmos básicos y performance
+                      </div>
+                      <div>
+                        • <span class="highlight-blue">C++</span> - Estructuras
+                        de datos fundamentales
+                      </div>
+                      <div>
+                        • <span class="highlight-green">Algoritmos</span> -
+                        Optimización y complejidad
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="p-4 bg-gray-900 rounded">
+                    <div class="highlight-green font-semibold mb-2">
+                      🏛️ Innovación Pública
+                    </div>
+                    <div class="text-sm">
+                      Interés en
+                      <span class="highlight-blue"
+                        >innovación tecnológica en sector público</span
+                      >, gobierno digital y herramientas de inclusión social.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="p-4 bg-gray-900 rounded">
+                    <div class="highlight-red font-semibold mb-2">
+                      🎨 Proyectos Creativos
+                    </div>
+                    <div class="text-sm space-y-2">
+                      <div class="flex items-center justify-between">
+                        <span
+                          >•
+                          <span class="highlight-purple">Patsygram</span></span
+                        >
+                        <a
+                          href="#"
+                          onclick="openCreativeProject('patsygram')"
+                          class="highlight-blue hover:underline text-xs"
+                          >Ver →</a
+                        >
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span
+                          >•
+                          <span class="highlight-orange"
+                            >Fanzine LGBT</span
+                          ></span
+                        >
+                        <a
+                          href="#"
+                          onclick="openCreativeProject('fanzine')"
+                          class="highlight-blue hover:underline text-xs"
+                          >Ver →</a
+                        >
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span
+                          >•
+                          <span class="highlight-green"
+                            >Blog Meditación</span
+                          ></span
+                        >
+                        <a
+                          href="#"
+                          onclick="openCreativeProject('meditation')"
+                          class="highlight-blue hover:underline text-xs"
+                          >Ver →</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="p-4 bg-gray-900 rounded">
+                    <div class="highlight-blue font-semibold mb-2">
+                      🌟 Filosofía de Trabajo
+                    </div>
+                    <div class="text-sm">
+                      Enfoque en
+                      <span class="highlight-green">accesibilidad</span>,
+                      <span class="highlight-purple">diversidad</span> y
+                      <span class="highlight-orange">buenas prácticas</span> de
+                      desarrollo.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Commands -->
+          <div class="mb-6">
+            <div class="command-line mb-2">$ help</div>
+            <div class="output-text text-sm">
+              <div class="grid md:grid-cols-3 gap-4">
+                <button
+                  onclick="showContact()"
+                  class="p-3 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-left"
+                >
+                  <div class="highlight-blue">contact</div>
+                  <div class="text-xs text-gray-400">
+                    Mostrar información de contacto
+                  </div>
+                </button>
+                <button
+                  onclick="showProjects()"
+                  class="p-3 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-left"
+                >
+                  <div class="highlight-green">projects</div>
+                  <div class="text-xs text-gray-400">
+                    Ver proyectos destacados
+                  </div>
+                </button>
+                <button
+                  onclick="downloadCV()"
+                  class="p-3 bg-gray-900 rounded hover:bg-gray-800 transition-colors text-left"
+                >
+                  <div class="highlight-purple">download</div>
+                  <div class="text-xs text-gray-400">Descargar CV en PDF</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Prompt -->
+          <div class="flex items-center">
+            <span class="command-line mr-2">$</span>
+            <span class="typing-animation">_</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-8 text-gray-500 text-sm">
+        <p>© 2024 - Desarrollado con ❤️ y mucho ☕</p>
+      </div>
+    </div>
+
+    <script>
+      // Terminal typing effect
+      function typeText(element, text, speed = 50) {
+        element.innerHTML = "";
+        let i = 0;
+        const timer = setInterval(() => {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+          } else {
+            clearInterval(timer);
+          }
+        }, speed);
+      }
+
+      // Interactive commands
+      function showContact() {
+        alert(
+          "📧 Email: zukuntwellefanzine@gmail.com\n📞 Teléfono: +52 5610677516\n🔗 GitHub: github.com/zukunftwellefanzine"
+        );
+      }
+
+      function showProjects() {
+        alert(
+          "🚀 Proyectos destacados:\n\n• Library Manager (Java + SQL + Docker)\n• Convertidor de Divisas (Express + TypeScript)\n• Amazon Tracker (Python + Scraping)\n• Blockchain Simple (Python + Security)"
+        );
+      }
+
+      // Project repository and demo functions
+      function openRepo(project) {
+        const repos = {
+          "library-manager":
+            "https://github.com/zukunftwellefanzine/library-manager",
+          "currency-converter":
+            "https://github.com/zukunftwellefanzine/currency-converter",
+          "amazon-tracker":
+            "https://github.com/zukunftwellefanzine/amazon-tracker",
+          "simple-blockchain":
+            "https://github.com/zukunftwellefanzine/simple-blockchain",
+        };
+
+        if (repos[project]) {
+          alert(
+            `🔗 Abriendo repositorio: ${repos[project]}\n\n(En un entorno real, esto abriría el enlace)`
+          );
+        } else {
+          alert("📂 Repositorio disponible próximamente");
+        }
+      }
+
+      function openDemo(project) {
+        const demos = {
+          "library-manager": "Demo disponible en localhost:8080",
+          "currency-converter": "API REST disponible en Heroku",
+          "amazon-tracker": "Demo con datos de prueba",
+          "simple-blockchain": "Blockchain educativo interactivo",
+        };
+
+        if (demos[project]) {
+          alert(
+            `🚀 Demo: ${demos[project]}\n\n(En un entorno real, esto abriría la demo)`
+          );
+        } else {
+          alert("🚀 Demo disponible próximamente");
+        }
+      }
+
+      function openCreativeProject(project) {
+        const projects = {
+          patsygram: "Proyecto de arte digital y fotografía experimental",
+          fanzine: "Publicación independiente sobre diversidad y cultura LGBT",
+          meditation: "Blog personal sobre mindfulness y bienestar digital",
+        };
+
+        if (projects[project]) {
+          alert(
+            `🎨 ${projects[project]}\n\n(En un entorno real, esto abriría el proyecto)`
+          );
+        } else {
+          alert("🎨 Proyecto creativo disponible próximamente");
+        }
+      }
+
+      function downloadCV() {
+        alert(
+          "📄 Función de descarga disponible próximamente.\n\nPor ahora puedes contactarme directamente para solicitar mi CV completo."
+        );
+      }
+
+      // Add some interactive terminal effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Simulate terminal loading
+        setTimeout(() => {
+          const cursor = document.querySelector(".typing-animation");
+          if (cursor) {
+            cursor.style.animation = "blink 1s infinite";
+          }
+        }, 1000);
+
+        // Add click effects to terminal window
+        document
+          .querySelector(".terminal-window")
+          .addEventListener("click", function () {
+            const cursor = document.querySelector(".typing-animation");
+            if (cursor) {
+              cursor.style.borderColor = "#7ee787";
+              setTimeout(() => {
+                cursor.style.borderColor = "#58a6ff";
+              }, 200);
+            }
+          });
+      });
+
+      // Photo upload functionality
+      document
+        .getElementById("photoInput")
+        .addEventListener("change", function (e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const img = document.getElementById("profileImage");
+              const container = document.getElementById("photoContainer");
+
+              img.src = e.target.result;
+              img.classList.remove("hidden");
+              container.classList.add("hidden");
+
+              // Add a subtle animation
+              img.style.opacity = "0";
+              setTimeout(() => {
+                img.style.transition = "opacity 0.5s ease-in-out";
+                img.style.opacity = "1";
+              }, 100);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+
+      // Click to change photo
+      document
+        .getElementById("profileImage")
+        .addEventListener("click", function () {
+          document.getElementById("photoInput").click();
+        });
+
+      // Keyboard shortcuts
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.key === "c") {
+          e.preventDefault();
+          showContact();
+        } else if (e.ctrlKey && e.key === "p") {
+          e.preventDefault();
+          showProjects();
+        }
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'97d272ce81bc64b0',t:'MTc1NzU0NDI1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
